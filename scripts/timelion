@@ -1,0 +1,7 @@
+.es(index=metrics,q='serveur:TEREVA_PUSIGNAN',timefield=@timestamp,metric=avg:cpu).divide(1000).label("Utilisation CPU cumuléee").lines(),
+.es(index=metrics,q='serveur:TEREVA_PUSIGNAN',timefield=@timestamp,metric=avg:procs).label("Nombre de process").lines()
+
+
+.es(index=metrics,q='serveur:MABEO_BOURG',timefield=@timestamp,metric=avg:procs).label("MABEO_BOURG").lines(),
+.es(index=metrics,q='serveur:TEREVA_PUSIGNAN',timefield=@timestamp,metric=avg:procs).label("TEREVA_PUSIGNAN").lines(),
+.es(index=metrics,q='serveur:TEREVA_BRIVE',timefield=@timestamp,metric=avg:procs).label("TEREVA_BRIVE").lines()

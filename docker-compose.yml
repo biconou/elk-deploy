@@ -2,6 +2,16 @@ version: '2'
 
 services:
 
+  apmserver:
+    build:
+      context: apm/
+    environment: 
+      output.elasticsearch.hosts: "elasticsearch:9200"
+    ports:
+      - "8200:8200"
+    networks:
+      - elk
+      
   elasticsearch:
     build:
       context: elasticsearch/
@@ -9,6 +19,7 @@ services:
         ELK_VERSION: $ELK_VERSION
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - /mnt/DATA/elk-data/elasticsearch:/usr/share/elasticsearch/data:rw
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -51,6 +62,5 @@ services:
       - elasticsearch
 
 networks:
-
   elk:
     driver: bridge

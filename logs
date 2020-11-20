@@ -1,0 +1,806 @@
+Attaching to docker-elk_logstash_1
+[36mlogstash_1       |[0m OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future release.
+[36mlogstash_1       |[0m WARNING: An illegal reflective access operation has occurred
+[36mlogstash_1       |[0m WARNING: Illegal reflective access by com.headius.backport9.modules.Modules (file:/usr/share/logstash/logstash-core/lib/jars/jruby-complete-9.2.11.1.jar) to method sun.nio.ch.NativeThread.signal(long)
+[36mlogstash_1       |[0m WARNING: Please consider reporting this to the maintainers of com.headius.backport9.modules.Modules
+[36mlogstash_1       |[0m WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+[36mlogstash_1       |[0m WARNING: All illegal access operations will be denied in a future release
+[36mlogstash_1       |[0m Sending Logstash logs to /usr/share/logstash/logs which is now configured via log4j2.properties
+[36mlogstash_1       |[0m [2020-08-17T15:47:34,747][DEBUG][logstash.modules.scaffold] Found module {:module_name=>"netflow", :directory=>"/usr/share/logstash/modules/netflow/configuration"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:34,751][DEBUG][logstash.plugins.registry] Adding plugin to the registry {:name=>"netflow", :type=>:modules, :class=>#<LogStash::Modules::Scaffold:0x7ee0af8c @directory="/usr/share/logstash/modules/netflow/configuration", @module_name="netflow", @kibana_version_parts=["6", "0", "0"]>}
+[36mlogstash_1       |[0m [2020-08-17T15:47:34,752][DEBUG][logstash.modules.scaffold] Found module {:module_name=>"fb_apache", :directory=>"/usr/share/logstash/modules/fb_apache/configuration"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:34,752][DEBUG][logstash.plugins.registry] Adding plugin to the registry {:name=>"fb_apache", :type=>:modules, :class=>#<LogStash::Modules::Scaffold:0x52c14891 @directory="/usr/share/logstash/modules/fb_apache/configuration", @module_name="fb_apache", @kibana_version_parts=["6", "0", "0"]>}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,006][DEBUG][logstash.runner          ] -------- Logstash Settings (* means modified) ---------
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,007][DEBUG][logstash.runner          ] node.name: "6cd13d67547d"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,007][DEBUG][logstash.runner          ] *path.config: "/usr/share/logstash/pipeline"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,007][DEBUG][logstash.runner          ] path.data: "/usr/share/logstash/data"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] modules.cli: []
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] modules: []
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] modules_list: []
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] modules_variable_list: []
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] modules_setup: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] config.test_and_exit: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] config.reload.automatic: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] config.reload.interval: #<LogStash::Util::TimeValue:0x67f3b72d @duration=3, @time_unit=:second>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] config.support_escapes: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] config.field_reference.parser: "STRICT"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] metric.collect: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] pipeline.id: "main"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,008][DEBUG][logstash.runner          ] pipeline.system: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.workers: 12
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.batch.size: 125
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.batch.delay: 50
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.unsafe_shutdown: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.java_execution: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.reloadable: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.plugin_classloaders: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.separate_logs: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] pipeline.ordered: "auto"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] path.plugins: []
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] *config.debug: true (default: false)
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] *log.level: "debug" (default: "info")
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,009][DEBUG][logstash.runner          ] version: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] help: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] log.format: "plain"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] http.enabled: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] *http.host: "0.0.0.0" (default: "127.0.0.1")
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] http.port: 9600..9700
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] http.environment: "production"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.type: "memory"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.drain: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.page_capacity: 67108864
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.max_bytes: 1073741824
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.max_events: 0
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.checkpoint.acks: 1024
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.checkpoint.writes: 1024
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,010][DEBUG][logstash.runner          ] queue.checkpoint.interval: 1000
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] queue.checkpoint.retry: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] dead_letter_queue.enable: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] dead_letter_queue.max_bytes: 1073741824
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] slowlog.threshold.warn: #<LogStash::Util::TimeValue:0x924c964 @duration=-1, @time_unit=:nanosecond>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] slowlog.threshold.info: #<LogStash::Util::TimeValue:0x73145db2 @duration=-1, @time_unit=:nanosecond>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] slowlog.threshold.debug: #<LogStash::Util::TimeValue:0x557bf0f0 @duration=-1, @time_unit=:nanosecond>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] slowlog.threshold.trace: #<LogStash::Util::TimeValue:0x60b33bc @duration=-1, @time_unit=:nanosecond>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] keystore.classname: "org.logstash.secret.store.backend.JavaKeyStore"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] keystore.file: "/usr/share/logstash/config/logstash.keystore"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] path.queue: "/usr/share/logstash/data/queue"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] path.dead_letter_queue: "/usr/share/logstash/data/dead_letter_queue"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] path.settings: "/usr/share/logstash/config"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,011][DEBUG][logstash.runner          ] path.logs: "/usr/share/logstash/logs"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.management.enabled: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.management.logstash.poll_interval: #<LogStash::Util::TimeValue:0x294bb5f0 @duration=5, @time_unit=:second>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.management.pipeline.id: ["main"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.management.elasticsearch.username: "logstash_system"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.management.elasticsearch.hosts: ["https://localhost:9200"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.management.elasticsearch.ssl.verification_mode: "certificate"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.management.elasticsearch.sniffing: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.monitoring.enabled: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.monitoring.elasticsearch.hosts: ["http://localhost:9200"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.monitoring.collection.interval: #<LogStash::Util::TimeValue:0x594c8879 @duration=10, @time_unit=:second>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.monitoring.collection.timeout_interval: #<LogStash::Util::TimeValue:0x3dee7142 @duration=10, @time_unit=:minute>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.monitoring.elasticsearch.username: "logstash_system"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,012][DEBUG][logstash.runner          ] xpack.monitoring.elasticsearch.ssl.verification_mode: "certificate"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] xpack.monitoring.elasticsearch.sniffing: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] xpack.monitoring.collection.pipeline.details.enabled: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] xpack.monitoring.collection.config.enabled: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.enabled: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.elasticsearch.hosts: ["http://localhost:9200"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.collection.interval: #<LogStash::Util::TimeValue:0x286bd902 @duration=10, @time_unit=:second>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.collection.timeout_interval: #<LogStash::Util::TimeValue:0x15598336 @duration=10, @time_unit=:minute>
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.elasticsearch.username: "logstash_system"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.elasticsearch.ssl.verification_mode: "certificate"
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.elasticsearch.sniffing: false
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.collection.pipeline.details.enabled: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] monitoring.collection.config.enabled: true
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,013][DEBUG][logstash.runner          ] node.uuid: ""
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,014][DEBUG][logstash.runner          ] --------------- Logstash Settings -------------------
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,053][WARN ][logstash.config.source.multilocal] Ignoring the 'pipelines.yml' file because modules or command line options are specified
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,057][INFO ][logstash.runner          ] Starting Logstash {"logstash.version"=>"7.8.0", "jruby.version"=>"jruby 9.2.11.1 (2.5.7) 2020-03-25 b1f55b1a40 OpenJDK 64-Bit Server VM 11.0.7+10-LTS on 11.0.7+10-LTS +indy +jit [linux-x86_64]"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,099][DEBUG][logstash.agent           ] Setting up metric collection
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,156][DEBUG][logstash.instrument.periodicpoller.os] Starting {:polling_interval=>5, :polling_timeout=>120}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,409][DEBUG][logstash.instrument.periodicpoller.jvm] Starting {:polling_interval=>5, :polling_timeout=>120}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,487][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,491][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,509][DEBUG][logstash.instrument.periodicpoller.persistentqueue] Starting {:polling_interval=>5, :polling_timeout=>120}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,527][DEBUG][logstash.instrument.periodicpoller.deadletterqueue] Starting {:polling_interval=>5, :polling_timeout=>120}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,579][DEBUG][logstash.agent           ] Starting agent
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,631][DEBUG][logstash.config.source.local.configpathloader] Skipping the following files while reading config since they don't match the specified glob pattern {:files=>["/usr/share/logstash/CONTRIBUTORS", "/usr/share/logstash/Gemfile", "/usr/share/logstash/Gemfile.lock", "/usr/share/logstash/LICENSE.txt", "/usr/share/logstash/NOTICE.TXT", "/usr/share/logstash/bin", "/usr/share/logstash/config", "/usr/share/logstash/data", "/usr/share/logstash/lib", "/usr/share/logstash/logstash-core", "/usr/share/logstash/logstash-core-plugin-api", "/usr/share/logstash/modules", "/usr/share/logstash/pipeline", "/usr/share/logstash/tools", "/usr/share/logstash/vendor", "/usr/share/logstash/x-pack"]}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,632][DEBUG][logstash.config.source.local.configpathloader] Reading config file {:config_file=>"/usr/share/logstash/pipeline/logstash.conf"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,647][DEBUG][logstash.config.pipelineconfig] -------- Logstash Config ---------
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,647][DEBUG][logstash.config.pipelineconfig] Config from source {:source=>LogStash::Config::Source::Local, :pipeline_id=>:main}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,648][DEBUG][logstash.config.pipelineconfig] Config string {:protocol=>"file", :id=>"/usr/share/logstash/pipeline/logstash.conf"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,649][DEBUG][logstash.config.pipelineconfig] 
+[36mlogstash_1       |[0m 
+[36mlogstash_1       |[0m #
+[36mlogstash_1       |[0m input {
+[36mlogstash_1       |[0m   file {
+[36mlogstash_1       |[0m     path => "/usr/share/logstash/data/metrics.csv"
+[36mlogstash_1       |[0m     start_position => "beginning"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m }
+[36mlogstash_1       |[0m filter {
+[36mlogstash_1       |[0m   csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m   date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m }
+[36mlogstash_1       |[0m output {
+[36mlogstash_1       |[0m    elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m }
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,649][DEBUG][logstash.config.pipelineconfig] Merged config
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,651][DEBUG][logstash.config.pipelineconfig] 
+[36mlogstash_1       |[0m 
+[36mlogstash_1       |[0m #
+[36mlogstash_1       |[0m input {
+[36mlogstash_1       |[0m   file {
+[36mlogstash_1       |[0m     path => "/usr/share/logstash/data/metrics.csv"
+[36mlogstash_1       |[0m     start_position => "beginning"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m }
+[36mlogstash_1       |[0m filter {
+[36mlogstash_1       |[0m   csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m   date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m }
+[36mlogstash_1       |[0m output {
+[36mlogstash_1       |[0m    elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m }
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,668][DEBUG][logstash.agent           ] Converging pipelines state {:actions_count=>1}
+[36mlogstash_1       |[0m [2020-08-17T15:47:35,673][DEBUG][logstash.agent           ] Executing action {:action=>LogStash::PipelineAction::Create/pipeline_id:main}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,163][DEBUG][org.logstash.secret.store.SecretStoreFactory] Attempting to exists or secret store with implementation: org.logstash.secret.store.backend.JavaKeyStore
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,571][DEBUG][org.reflections.Reflections] going to scan these urls:
+[36mlogstash_1       |[0m jar:file:/usr/share/logstash/logstash-core/lib/jars/logstash-core.jar!/
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,600][INFO ][org.reflections.Reflections] Reflections took 27 ms to scan 1 urls, producing 21 keys and 41 values 
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,605][DEBUG][org.reflections.Reflections] expanded subtype co.elastic.logstash.api.Plugin -> co.elastic.logstash.api.Input
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,605][DEBUG][org.reflections.Reflections] expanded subtype co.elastic.logstash.api.Plugin -> co.elastic.logstash.api.Codec
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,605][DEBUG][org.reflections.Reflections] expanded subtype org.jruby.RubyBasicObject -> org.jruby.RubyObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,605][DEBUG][org.reflections.Reflections] expanded subtype java.lang.Cloneable -> org.jruby.RubyBasicObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,605][DEBUG][org.reflections.Reflections] expanded subtype org.jruby.runtime.builtin.IRubyObject -> org.jruby.RubyBasicObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,605][DEBUG][org.reflections.Reflections] expanded subtype java.io.Serializable -> org.jruby.RubyBasicObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype java.lang.Comparable -> org.jruby.RubyBasicObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype org.jruby.runtime.marshal.CoreObjectType -> org.jruby.RubyBasicObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype org.jruby.runtime.builtin.InstanceVariables -> org.jruby.RubyBasicObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype org.jruby.runtime.builtin.InternalVariables -> org.jruby.RubyBasicObject
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype co.elastic.logstash.api.Plugin -> co.elastic.logstash.api.Output
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype co.elastic.logstash.api.Metric -> co.elastic.logstash.api.NamespacedMetric
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype java.security.SecureClassLoader -> java.net.URLClassLoader
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype java.lang.ClassLoader -> java.security.SecureClassLoader
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype java.io.Closeable -> java.net.URLClassLoader
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,606][DEBUG][org.reflections.Reflections] expanded subtype java.lang.AutoCloseable -> java.io.Closeable
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,607][DEBUG][org.reflections.Reflections] expanded subtype java.lang.Comparable -> java.lang.Enum
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,607][DEBUG][org.reflections.Reflections] expanded subtype java.io.Serializable -> java.lang.Enum
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,607][DEBUG][org.reflections.Reflections] expanded subtype co.elastic.logstash.api.Plugin -> co.elastic.logstash.api.Filter
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,718][DEBUG][logstash.plugins.registry] On demand adding plugin to the registry {:name=>"file", :type=>"input", :class=>LogStash::Inputs::File}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,816][DEBUG][logstash.plugins.registry] On demand adding plugin to the registry {:name=>"plain", :type=>"codec", :class=>LogStash::Codecs::Plain}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,835][DEBUG][logstash.codecs.plain    ] config LogStash::Codecs::Plain/@id = "plain_1fa268b9-46f0-44cd-8287-52c5fd07fb98"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,838][DEBUG][logstash.codecs.plain    ] config LogStash::Codecs::Plain/@enable_metric = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,840][DEBUG][logstash.codecs.plain    ] config LogStash::Codecs::Plain/@charset = "UTF-8"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,868][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@start_position = "beginning"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,873][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@path = ["/usr/share/logstash/data/metrics.csv"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,874][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@id = "f3dcb00e6ba994f3347aad778d4a57c41e10a2710bc7375a4dc77243ceecb524"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,875][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@enable_metric = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,883][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@codec = <LogStash::Codecs::Plain id=>"plain_1fa268b9-46f0-44cd-8287-52c5fd07fb98", enable_metric=>true, charset=>"UTF-8">
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,884][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@add_field = {}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,884][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@stat_interval = 1.0
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@discover_interval = 15
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@sincedb_write_interval = 15.0
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@delimiter = "\n"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@close_older = 3600.0
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@mode = "tail"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@file_completed_action = "delete"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@sincedb_clean_after = 1209600.0
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,885][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@file_chunk_size = 32768
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,886][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@file_chunk_count = 140737488355327
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,886][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@file_sort_by = "last_modified"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,886][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@file_sort_direction = "asc"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,886][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@exit_after_read = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,886][DEBUG][logstash.inputs.file     ] config LogStash::Inputs::File/@check_archive_validity = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,944][DEBUG][logstash.plugins.registry] On demand adding plugin to the registry {:name=>"csv", :type=>"filter", :class=>LogStash::Filters::CSV}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@convert = {"procs"=>"integer", "cpu"=>"float"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@id = "cef543eaef4bb8ef2d76de4eca7dcaeff1ebdc248cbf754872383cace82cb580"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@separator = " "
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@columns = ["time", "procs", "cpu"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@enable_metric = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@add_tag = []
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@remove_tag = []
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@add_field = {}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,964][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@remove_field = []
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@periodic_flush = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@source = "message"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@quote_char = "\""
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@autogenerate_column_names = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@skip_header = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@skip_empty_columns = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@skip_empty_rows = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,965][DEBUG][logstash.filters.csv     ] config LogStash::Filters::CSV/@autodetect_column_names = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,975][DEBUG][logstash.plugins.registry] On demand adding plugin to the registry {:name=>"date", :type=>"filter", :class=>LogStash::Filters::Date}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@match = ["time", "yyyy-MM-dd:HH:mm:ss"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@id = "813de982a0cd600588472db90f8cbae8e6a041232d94f88630da55db5b11d45a"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@enable_metric = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@add_tag = []
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@remove_tag = []
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@add_field = {}
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@remove_field = []
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@periodic_flush = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,988][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@target = "@timestamp"
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,989][DEBUG][logstash.filters.date    ] config LogStash::Filters::Date/@tag_on_failure = ["_dateparsefailure"]
+[36mlogstash_1       |[0m [2020-08-17T15:47:36,997][DEBUG][org.logstash.filters.DateFilter] Date filter with format=yyyy-MM-dd:HH:mm:ss, locale=null, timezone=null built as org.logstash.filters.parser.JodaParser
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,004][DEBUG][logstash.plugins.registry] On demand adding plugin to the registry {:name=>"elasticsearch", :type=>"output", :class=>LogStash::Outputs::ElasticSearch}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,042][DEBUG][logstash.codecs.plain    ] config LogStash::Codecs::Plain/@id = "plain_68fc5af3-2aa9-4fe2-b97e-463cc3ef3535"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,043][DEBUG][logstash.codecs.plain    ] config LogStash::Codecs::Plain/@enable_metric = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,043][DEBUG][logstash.codecs.plain    ] config LogStash::Codecs::Plain/@charset = "UTF-8"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,058][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@index = "metrics"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,066][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@hosts = [//elasticsearch:9200]
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,066][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@id = "f64cb68ce0109c38190f8ea30697b4f107b49c9abdbe0567ee094216be6df145"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,066][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@enable_metric = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,067][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@codec = <LogStash::Codecs::Plain id=>"plain_68fc5af3-2aa9-4fe2-b97e-463cc3ef3535", enable_metric=>true, charset=>"UTF-8">
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,067][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@workers = 1
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,067][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@manage_template = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,067][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@template_name = "logstash"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@template_overwrite = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@parent = nil
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@join_field = nil
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@upsert = ""
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@doc_as_upsert = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@script = ""
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@script_type = "inline"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@script_lang = "painless"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,068][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@script_var_name = "event"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,069][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@scripted_upsert = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,069][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@retry_initial_interval = 2
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,069][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@retry_max_interval = 64
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,069][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@retry_on_conflict = 1
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,069][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@pipeline = nil
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,069][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@ilm_enabled = "auto"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,069][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@ilm_rollover_alias = "logstash"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,070][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@ilm_pattern = "{now/d}-000001"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,070][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@ilm_policy = "logstash-policy"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,070][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@action = "index"
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,070][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@ssl_certificate_verification = true
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,070][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@sniffing = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,070][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@sniffing_delay = 5
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,071][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@timeout = 60
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,071][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@failure_type_logging_whitelist = []
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,071][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@pool_max = 1000
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,071][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@pool_max_per_route = 100
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,071][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@resurrect_delay = 5
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,071][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@validate_after_inactivity = 10000
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,072][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@http_compression = false
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,072][DEBUG][logstash.outputs.elasticsearch] config LogStash::Outputs::ElasticSearch/@custom_headers = {}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,093][DEBUG][org.logstash.execution.JavaBasePipelineExt] Compiled pipeline code for pipeline main : **GRAPH**
+[36mlogstash_1       |[0m Vertices: 6 Edges: 5
+[36mlogstash_1       |[0m ----------------------P[input-file{"path"=>"/usr/share/logstash/data/metrics.csv", "start_position"=>"beginning"}|[file]/usr/share/logstash/pipeline/logstash.conf:3:3:```
+[36mlogstash_1       |[0m file {
+[36mlogstash_1       |[0m     path => "/usr/share/logstash/data/metrics.csv"
+[36mlogstash_1       |[0m     start_position => "beginning"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] -> __QUEUE__
+[36mlogstash_1       |[0m __QUEUE__ -> P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```]
+[36mlogstash_1       |[0m P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] -> P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```]
+[36mlogstash_1       |[0m P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] -> filter_to_output
+[36mlogstash_1       |[0m filter_to_output -> P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```]
+[36mlogstash_1       |[0m **GRAPH**
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,127][DEBUG][logstash.javapipeline    ] Starting pipeline {:pipeline_id=>"main"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,173][DEBUG][logstash.outputs.elasticsearch][main] Normalizing http path {:path=>nil, :normalized=>nil}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,583][INFO ][logstash.outputs.elasticsearch][main] Elasticsearch pool URLs updated {:changes=>{:removed=>[], :added=>[http://elasticsearch:9200/]}}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,591][DEBUG][logstash.outputs.elasticsearch][main] Running health check to see if an Elasticsearch connection is working {:healthcheck_url=>http://elasticsearch:9200/, :path=>"/"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,905][WARN ][logstash.outputs.elasticsearch][main] Restored connection to ES instance {:url=>"http://elasticsearch:9200/"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,982][INFO ][logstash.outputs.elasticsearch][main] ES Output version determined {:es_version=>7}
+[36mlogstash_1       |[0m [2020-08-17T15:47:37,985][WARN ][logstash.outputs.elasticsearch][main] Detected a 6.x and above cluster: the `type` event field won't be used to determine the document _type {:es_version=>7}
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,081][INFO ][logstash.outputs.elasticsearch][main] New Elasticsearch output {:class=>"LogStash::Outputs::ElasticSearch", :hosts=>["//elasticsearch:9200"]}
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,090][DEBUG][logstash.filters.csv     ][main] CSV parsing options {:col_sep=>" ", :quote_char=>"\""}
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,121][INFO ][logstash.outputs.elasticsearch][main] Using default mapping template
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,174][INFO ][logstash.javapipeline    ][main] Starting pipeline {:pipeline_id=>"main", "pipeline.workers"=>12, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>50, "pipeline.max_inflight"=>1500, "pipeline.sources"=>["/usr/share/logstash/pipeline/logstash.conf"], :thread=>"#<Thread:0x740467e1 run>"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,213][INFO ][logstash.outputs.elasticsearch][main] Attempting to install template {:manage_template=>{"index_patterns"=>"logstash-*", "version"=>60001, "settings"=>{"index.refresh_interval"=>"5s", "number_of_shards"=>1}, "mappings"=>{"dynamic_templates"=>[{"message_field"=>{"path_match"=>"message", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false}}}, {"string_fields"=>{"match"=>"*", "match_mapping_type"=>"string", "mapping"=>{"type"=>"text", "norms"=>false, "fields"=>{"keyword"=>{"type"=>"keyword", "ignore_above"=>256}}}}}], "properties"=>{"@timestamp"=>{"type"=>"date"}, "@version"=>{"type"=>"keyword"}, "geoip"=>{"dynamic"=>true, "properties"=>{"ip"=>{"type"=>"ip"}, "location"=>{"type"=>"geo_point"}, "latitude"=>{"type"=>"half_float"}, "longitude"=>{"type"=>"half_float"}}}}}}}
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,249][INFO ][logstash.outputs.elasticsearch][main] Installing elasticsearch template to _template/logstash
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,925][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,925][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,925][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,926][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,925][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,925][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,926][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,925][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,925][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,927][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,927][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:38,927][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-csv{"separator"=>" ", "columns"=>["time", "procs", "cpu"], "convert"=>{"procs"=>"integer", "cpu"=>"float"}}|[file]/usr/share/logstash/pipeline/logstash.conf:9:3:```
+[36mlogstash_1       |[0m csv {
+[36mlogstash_1       |[0m     separator => " "
+[36mlogstash_1       |[0m     columns => ["time","procs","cpu"]
+[36mlogstash_1       |[0m     convert => {
+[36mlogstash_1       |[0m       "procs" => "integer"
+[36mlogstash_1       |[0m       "cpu" => "float"
+[36mlogstash_1       |[0m     }
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@46b1bed2
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,074][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,087][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,091][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,092][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,092][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,093][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,094][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,096][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,097][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,097][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,099][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,099][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled filter
+[36mlogstash_1       |[0m  P[filter-date{"match"=>["time", "yyyy-MM-dd:HH:mm:ss"]}|[file]/usr/share/logstash/pipeline/logstash.conf:17:3:```
+[36mlogstash_1       |[0m date {
+[36mlogstash_1       |[0m     match => [ "time", "yyyy-MM-dd:HH:mm:ss" ]
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@cf941d29
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,109][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,109][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,109][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,110][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,110][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,113][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,114][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,116][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,117][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,117][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,118][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,122][DEBUG][org.logstash.config.ir.CompiledPipeline][main] Compiled output
+[36mlogstash_1       |[0m  P[output-elasticsearch{"hosts"=>"elasticsearch:9200", "index"=>"metrics"}|[file]/usr/share/logstash/pipeline/logstash.conf:22:4:```
+[36mlogstash_1       |[0m elasticsearch {
+[36mlogstash_1       |[0m     hosts => "elasticsearch:9200"
+[36mlogstash_1       |[0m     index => "metrics"
+[36mlogstash_1       |[0m   }
+[36mlogstash_1       |[0m ```] 
+[36mlogstash_1       |[0m  into 
+[36mlogstash_1       |[0m  org.logstash.config.ir.compiler.ComputeStepSyntaxElement@256d4637
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,295][INFO ][logstash.inputs.file     ][main] No sincedb_path set, generating one based on the "path" setting {:sincedb_path=>"/usr/share/logstash/data/plugins/inputs/file/.sincedb_81f26cae3a8e312e3d86d3e2e1b0178c", :path=>["/usr/share/logstash/data/metrics.csv"]}
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,311][INFO ][logstash.javapipeline    ][main] Pipeline started {"pipeline.id"=>"main"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,321][DEBUG][logstash.javapipeline    ] Pipeline started successfully {:pipeline_id=>"main", :thread=>"#<Thread:0x740467e1 run>"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,324][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,355][INFO ][filewatch.observingtail  ][main][f3dcb00e6ba994f3347aad778d4a57c41e10a2710bc7375a4dc77243ceecb524] START, creating Discoverer, Watch with file and sincedb collections
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,370][INFO ][logstash.agent           ] Pipelines running {:count=>1, :running_pipelines=>[:main], :non_running_pipelines=>[]}
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,400][DEBUG][logstash.agent           ] Starting puma
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,412][DEBUG][logstash.agent           ] Trying to start WebServer {:port=>9600}
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,447][DEBUG][logstash.api.service     ] [api-service] start
+[36mlogstash_1       |[0m [2020-08-17T15:47:39,565][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600}
+[36mlogstash_1       |[0m [2020-08-17T15:47:40,516][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:40,517][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:44,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:47:45,524][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:45,524][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:49,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:47:50,530][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:50,530][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:54,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:47:55,540][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:55,540][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:47:59,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:00,544][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:00,544][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:04,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:05,549][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:05,549][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:09,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:10,559][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:10,560][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:14,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:15,574][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:15,575][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:19,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:20,589][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:20,590][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:24,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:25,595][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:25,596][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:29,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:30,608][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:30,609][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:34,322][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:35,615][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:35,615][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:39,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:40,620][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:40,620][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:44,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:45,624][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:45,625][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:49,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:50,631][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:50,632][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:54,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:48:55,639][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:55,639][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:48:59,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:00,649][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:00,650][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:04,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:05,657][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:05,658][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:09,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:10,662][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:10,662][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:14,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:15,667][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:15,668][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:19,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:20,674][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:20,675][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:24,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:25,685][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:25,686][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:29,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:30,696][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:30,697][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:34,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:35,701][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:35,701][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:39,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:40,705][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:40,705][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:44,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:45,708][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:45,709][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:49,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:50,712][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:50,712][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:54,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:49:55,716][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:55,716][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:49:59,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:50:00,727][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:50:00,728][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
+[36mlogstash_1       |[0m [2020-08-17T15:50:04,321][DEBUG][org.logstash.execution.PeriodicFlush][main] Pushing flush onto pipeline.
+[36mlogstash_1       |[0m [2020-08-17T15:50:05,732][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ParNew"}
+[36mlogstash_1       |[0m [2020-08-17T15:50:05,732][DEBUG][logstash.instrument.periodicpoller.jvm] collector name {:name=>"ConcurrentMarkSweep"}
