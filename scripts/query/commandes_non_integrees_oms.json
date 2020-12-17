@@ -1,0 +1,44 @@
+{
+  "sort": [
+    {
+      "date_accordee_client": {
+        "order": "asc",
+        "unmapped_type": "boolean"
+      }
+    }
+  ],
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "match_all": {}
+        },
+        {
+          "range": {
+            "timestamp_export_erp": {
+              "lte": "2020-11-26T10:30:00.000Z",
+              "format": "strict_date_optional_time"
+            }
+          }
+        }
+      ],
+      "must_not": [
+        {
+          "exists": {
+            "field": "timestamp_creation_oms"
+          }
+        }
+      ]
+    }
+  },
+  "docvalue_fields": [
+    {
+      "field": "timestamp_export_erp",
+      "format": "date_time"
+    },
+    {
+      "field": "date_accordee_client",
+      "format": "date_time"
+    }
+  ]
+}

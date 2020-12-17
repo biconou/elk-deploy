@@ -1,0 +1,8 @@
+Champ : delai_integration_oms
+
+
+if (!doc['timestamp_creation_oms'].empty) {
+    def date_oms = doc['timestamp_creation_oms'].value.millis;
+    def date_erp = doc['timestamp_export_erp'].value.millis;
+    return (date_oms - date_erp) / 1000 / 60;
+}

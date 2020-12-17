@@ -5,3 +5,5 @@
 .es(index=metrics,q='serveur:MABEO_BOURG',timefield=@timestamp,metric=avg:procs).label("MABEO_BOURG").lines(),
 .es(index=metrics,q='serveur:TEREVA_PUSIGNAN',timefield=@timestamp,metric=avg:procs).label("TEREVA_PUSIGNAN").lines(),
 .es(index=metrics,q='serveur:TEREVA_BRIVE',timefield=@timestamp,metric=avg:procs).label("TEREVA_BRIVE").lines()
+
+
