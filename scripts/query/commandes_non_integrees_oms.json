@@ -22,7 +22,7 @@
           }
         }
       ],
-      "must_not": [
+      "!": [
         {
           "exists": {
             "field": "timestamp_creation_oms"
