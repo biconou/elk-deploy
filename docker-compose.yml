@@ -2,7 +2,19 @@ version: '2'
 
 services:
 
+  apmserver:
+    restart: unless-stopped
+    build:
+      context: apm/
+    environment: 
+      output.elasticsearch.hosts: "elasticsearch:9200"
+    ports:
+      - "8200:8200"
+    networks:
+      - elk
+      
   elasticsearch:
+    restart: unless-stopped
     build:
       context: elasticsearch/
       args:
@@ -18,6 +30,7 @@ services:
       - elk
 
   logstash:
+    restart: unless-stopped
     build:
       context: logstash/
       args:
@@ -37,6 +50,7 @@ services:
       - elasticsearch
 
   kibana:
+    restart: unless-stopped
     build:
       context: kibana/
       args:
