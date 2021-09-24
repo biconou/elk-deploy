@@ -3,7 +3,6 @@ version: '2'
 services:
 
   apmserver:
-    restart: unless-stopped
     build:
       context: apm/
     environment: 
@@ -14,13 +13,13 @@ services:
       - elk
       
   elasticsearch:
-    restart: unless-stopped
     build:
       context: elasticsearch/
       args:
         ELK_VERSION: $ELK_VERSION
     volumes:
       - ./elasticsearch/config/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
+      - /mnt/DATA/elk-data/elasticsearch:/usr/share/elasticsearch/data:rw
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -30,7 +29,6 @@ services:
       - elk
 
   logstash:
-    restart: unless-stopped
     build:
       context: logstash/
       args:
@@ -50,7 +48,6 @@ services:
       - elasticsearch
 
   kibana:
-    restart: unless-stopped
     build:
       context: kibana/
       args:
@@ -64,7 +61,40 @@ services:
     depends_on:
       - elasticsearch
 
-networks:
+  # mongo:
+  #   image: mongo:4.2
+  #   networks:
+  #     - elk
 
+  # graylog:
+  #   image: graylog/graylog:4.1
+  #   environment:
+  #     # CHANGE ME (must be at least 16 characters)!
+  #     - GRAYLOG_PASSWORD_SECRET=somepasswordpepper
+  #     # Password: admin
+  #     - GRAYLOG_ROOT_PASSWORD_SHA2=8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918
+  #     - GRAYLOG_HTTP_EXTERNAL_URI=http://127.0.0.1:9000/
+  #   entrypoint: /usr/bin/tini -- wait-for-it elasticsearch:9200 --  /docker-entrypoint.sh
+  #   networks:
+  #     - elk
+  #   restart: always
+  #   depends_on:
+  #     - mongo
+  #     - elasticsearch
+  #   ports:
+  #     # Graylog web interface and REST API
+  #     - 9000:9000
+  #     # Syslog TCP
+  #     - 1514:1514
+  #     # Syslog UDP
+  #     - 1514:1514/udp
+  #     # GELF TCP
+  #     - 12201:12201
+  #     # GELF UDP
+  #     - 12201:12201/udp
+
+
+
+networks:
   elk:
     driver: bridge
