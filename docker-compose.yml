@@ -3,6 +3,7 @@ version: '2'
 services:
 
   apmserver:
+    restart: unless-stopped
     build:
       context: apm/
     environment: 
@@ -13,6 +14,7 @@ services:
       - elk
       
   elasticsearch:
+    restart: unless-stopped
     build:
       context: elasticsearch/
       args:
@@ -29,6 +31,7 @@ services:
       - elk
 
   logstash:
+    restart: unless-stopped
     build:
       context: logstash/
       args:
@@ -48,6 +51,7 @@ services:
       - elasticsearch
 
   kibana:
+    restart: unless-stopped
     build:
       context: kibana/
       args:
