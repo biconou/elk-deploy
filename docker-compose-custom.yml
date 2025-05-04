@@ -3,7 +3,8 @@ services:
   elasticsearch:
     environment:
       http.cors.enabled: true
-      http.cors.allow-origin: "http://localhost:8000"
+      #http.cors.allow-origin: "https?:\\/\\/(localhost|togodo)(:[0-9]+)?"
+      http.cors.allow-origin: ${HTTP_CORS_ALLOW_ORIGIN}
       http.cors.allow-headers: "X-Requested-With,Content-Type,Content-Length,Authorization"
     volumes:
       - ../elk-data:/usr/share/elasticsearch/data:Z
@@ -12,7 +13,3 @@ services:
     image: cars10/elasticvue:latest
     ports:
       - "8000:8080"
-#    networks:
-#      - elk
-#    depends_on:
-#      - elasticsearch
