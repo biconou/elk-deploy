@@ -1,3 +1,20 @@
+services:
+
+  elasticsearch:
+    environment:
+      http.cors.enabled: true
+      http.cors.allow-origin: "http://localhost:8000"
+      http.cors.allow-headers: "X-Requested-With,Content-Type,Content-Length,Authorization"
+
+  elasticvue:
+    image: cars10/elasticvue:latest
+    ports:
+      - "8000:8080"
+    networks:
+      - elk
+    depends_on:
+      - elasticsearch
+
 
 volumes:
   elasticsearch:
