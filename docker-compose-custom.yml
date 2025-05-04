@@ -2,7 +2,7 @@ services:
 
   elasticsearch:
     environment:
-      http.cors.enabled: true
+      http.cors.enabled: "true"
       #http.cors.allow-origin: "https?:\\/\\/(localhost|togodo)(:[0-9]+)?"
       http.cors.allow-origin: ${HTTP_CORS_ALLOW_ORIGIN}
       http.cors.allow-headers: "X-Requested-With,Content-Type,Content-Length,Authorization"
