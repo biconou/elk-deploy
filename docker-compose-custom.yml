@@ -5,21 +5,14 @@ services:
       http.cors.enabled: true
       http.cors.allow-origin: "http://localhost:8000"
       http.cors.allow-headers: "X-Requested-With,Content-Type,Content-Length,Authorization"
+    volumes:
+      - ../elk-data:/usr/share/elasticsearch/data:Z
 
   elasticvue:
     image: cars10/elasticvue:latest
     ports:
       - "8000:8080"
-    networks:
-      - elk
-    depends_on:
-      - elasticsearch
-
-
-volumes:
-  elasticsearch:
-    driver: local
-    driver_opts:
-      type: none
-      device: ../elk-data
-      o: bind
+#    networks:
+#      - elk
+#    depends_on:
+#      - elasticsearch
