@@ -1,0 +1,8 @@
+
+volumes:
+  elasticsearch:
+    driver: local
+    driver_opts:
+      type: none
+      device: ../elk-data
+      o: bind
