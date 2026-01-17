@@ -6,10 +6,12 @@ services:
       #http.cors.allow-origin: "https?:\\/\\/(localhost|togodo)(:[0-9]+)?"
       http.cors.allow-origin: ${HTTP_CORS_ALLOW_ORIGIN}
       http.cors.allow-headers: "X-Requested-With,Content-Type,Content-Length,Authorization"
+      xpack.security.enabled: "false"
     volumes:
       - ../elk-data:/usr/share/elasticsearch/data:Z
 
   elasticvue:
     image: cars10/elasticvue:latest
+    start: unless-stopped
     ports:
       - "8000:8080"
