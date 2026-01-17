@@ -12,6 +12,6 @@ services:
 
   elasticvue:
     image: cars10/elasticvue:latest
-    start: unless-stopped
+    restart: unless-stopped
     ports:
       - "8000:8080"
